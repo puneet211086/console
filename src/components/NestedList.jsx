@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
+import { List, ListItem, ListItemText, Collapse, Link } from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import Link from '@mui/material/Link';
+import DataCenterIcon from '@mui/icons-material/Storage';
+import VcenterIcon from '@mui/icons-material/AccountTree';
+import ClusterIcon from '@mui/icons-material/Dns';
+import HostIcon from '@mui/icons-material/Computer';
+import IloIcon from '@mui/icons-material/SettingsRemote';
 //import jsonData from './data.json'; // Adjust the path as needed
-
 
 const jsonData=[
   {
@@ -32,7 +32,6 @@ const jsonData=[
   }
   
 ]
-
 
 const NestedList = () => {
   const [openStates, setOpenStates] = useState(jsonData.map(vcenter => ({
@@ -93,7 +92,8 @@ const NestedList = () => {
     <List>
       {jsonData.map((vcenter, vIdx) => (
         <React.Fragment key={vIdx}>
-          <ListItem button onClick={() => toggleVcenter(vIdx)}>
+          <ListItem button onClick={() => toggleVcenter(vIdx)} sx={{ pl: 2 }}>
+            <VcenterIcon sx={{ mr: 1 }} />
             <ListItemText primary={<Link href={vcenter.url} target="_blank" rel="noopener">{vcenter.name}</Link>} />
             {openStates[vIdx].vcenter ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
@@ -101,7 +101,8 @@ const NestedList = () => {
             <List component="div" disablePadding>
               {vcenter.datacenters.map((datacenter, dIdx) => (
                 <React.Fragment key={dIdx}>
-                  <ListItem button onClick={() => toggleDatacenter(vIdx, dIdx)}>
+                  <ListItem button onClick={() => toggleDatacenter(vIdx, dIdx)} sx={{ pl: 4 }}>
+                    <DataCenterIcon sx={{ mr: 1 }} />
                     <ListItemText inset primary={datacenter.name} />
                     {openStates[vIdx].datacenters[dIdx].datacenter ? <ExpandLess /> : <ExpandMore />}
                   </ListItem>
@@ -109,7 +110,8 @@ const NestedList = () => {
                     <List component="div" disablePadding>
                       {datacenter.clusters.map((cluster, cIdx) => (
                         <React.Fragment key={cIdx}>
-                          <ListItem button onClick={() => toggleCluster(vIdx, dIdx, cIdx)}>
+                          <ListItem button onClick={() => toggleCluster(vIdx, dIdx, cIdx)} sx={{ pl: 6 }}>
+                            <ClusterIcon sx={{ mr: 1 }} />
                             <ListItemText inset primary={cluster.name} />
                             {openStates[vIdx].datacenters[dIdx].clusters[cIdx].cluster ? <ExpandLess /> : <ExpandMore />}
                           </ListItem>
@@ -117,14 +119,16 @@ const NestedList = () => {
                             <List component="div" disablePadding>
                               {cluster.hosts.map((host, hIdx) => (
                                 <React.Fragment key={hIdx}>
-                                  <ListItem button onClick={() => toggleHost(vIdx, dIdx, cIdx, hIdx)}>
+                                  <ListItem button onClick={() => toggleHost(vIdx, dIdx, cIdx, hIdx)} sx={{ pl: 8 }}>
+                                    <HostIcon sx={{ mr: 1 }} />
                                     <ListItemText 
                                       inset 
                                       primary={<Link href={host.url} target="_blank" rel="noopener">{host.name}</Link>} />
                                     {openStates[vIdx].datacenters[dIdx].clusters[cIdx].hosts[hIdx] ? <ExpandLess /> : <ExpandMore />}
                                   </ListItem>
                                   <Collapse in={openStates[vIdx].datacenters[dIdx].clusters[cIdx].hosts[hIdx]} timeout="auto" unmountOnExit>
-                                    <ListItem>
+                                    <ListItem sx={{ pl: 10 }}>
+                                      <IloIcon sx={{ mr: 1 }} />
                                       <ListItemText 
                                         inset 
                                         secondary={<Link href={host.iloUrl} target="_blank" rel="noopener">ILO: {host.iloUrl}</Link>} />
