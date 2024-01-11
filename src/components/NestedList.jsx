@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { List, ListItem, ListItemText, Collapse, Link } from '@mui/material';
+import { List, ListItem, ListItemText, Collapse, Link ,Typography} from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import DataCenterIcon from '@mui/icons-material/Storage';
 import VcenterIcon from '@mui/icons-material/AccountTree';
-import ClusterIcon from '@mui/icons-material/Dns';
-import HostIcon from '@mui/icons-material/Computer';
 import IloIcon from '@mui/icons-material/SettingsRemote';
+import HostIcon from '@mui/icons-material/SpeakerOutlined';
+import ClusterIcon from '@mui/icons-material/SpeakerGroupOutlined';
+
 //import jsonData from './data.json'; // Adjust the path as needed
 
 const jsonData=[
@@ -29,7 +30,28 @@ const jsonData=[
       }
       
     ]
+  },
+  {
+    "name": "vcenter2",
+    "url": "http://vcenter1.example.com",
+    "datacenters": [
+      {
+        "name": "datacenter1",
+        "clusters": [
+          {
+            "name": "cluster1",
+            "hosts": [
+              { "name": "host1", "ilo": "ilo1", "url": "http://host1.example.com", "iloUrl": "http://ilo1.example.com" },
+              { "name": "host2", "ilo": "ilo2", "url": "http://host2.example.com", "iloUrl": "http://ilo2.example.com" }
+            ]
+          },
+          
+        ]
+      }
+      
+    ]
   }
+  
   
 ]
 
@@ -90,10 +112,11 @@ const NestedList = () => {
 
   return (
     <List>
+    <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>VMware vCenter Server List</Typography>
       {jsonData.map((vcenter, vIdx) => (
         <React.Fragment key={vIdx}>
-          <ListItem button onClick={() => toggleVcenter(vIdx)} sx={{ pl: 2 }}>
-            <VcenterIcon sx={{ mr: 1 }} />
+          <ListItem button onClick={() => toggleVcenter(vIdx)} sx={{ pl: 2 , borderRadius: '10px', mb: 1, boxShadow: 2}} >
+            <VcenterIcon sx={{ mr: 1 }}  />
             <ListItemText primary={<Link href={vcenter.url} target="_blank" rel="noopener">{vcenter.name}</Link>} />
             {openStates[vIdx].vcenter ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
@@ -131,7 +154,7 @@ const NestedList = () => {
                                       <IloIcon sx={{ mr: 1 }} />
                                       <ListItemText 
                                         inset 
-                                        secondary={<Link href={host.iloUrl} target="_blank" rel="noopener">ILO: {host.iloUrl}</Link>} />
+                                        secondary={<Link href={host.iloUrl} target="_blank" rel="noopener"> {host.iloUrl}</Link>} />
                                     </ListItem>
                                   </Collapse>
                                 </React.Fragment>

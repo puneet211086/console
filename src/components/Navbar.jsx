@@ -18,8 +18,7 @@ const Navbar = ({ setActiveComponent }) => {
     setActiveComponent('vendorPage');
   };
   const handleSSMToolsClick = () => {
-    console.log("SSM Tools Clicked");
-    setActiveComponent('SSMTools');
+    setActiveComponent('ssmTools');
   };
 
   const handleHowToGuidesClick = () => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { List, ListItem, ListItemText, Collapse, Link, Table, TableBody, TableCell, TableHead, TableRow, Box } from '@mui/material';
+import { List, ListItem, ListItemText, Collapse, Link, Table, TableBody, TableCell, TableHead, TableRow, Box , Typography} from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
@@ -33,9 +33,10 @@ const VendorPage = () => {
 
   return (
     <List>
+    <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>Vendor Contact List</Typography>
       {vendorsData.map((vendor, index) => (
         <React.Fragment key={index}>
-          <ListItem button onClick={() => handleClick(vendor.name)}>
+          <ListItem button onClick={() => handleClick(vendor.name)} sx={{ borderRadius: '10px', mb: 1, boxShadow: 2 }}>
             <ListItemText primary={vendor.name} />
             {open[vendor.name] ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
