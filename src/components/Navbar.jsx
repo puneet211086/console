@@ -11,7 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const Navbar = ({ setActiveComponent }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -82,7 +82,9 @@ return (
         )}
       </Toolbar>
     </AppBar>
-    <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+    <Drawer anchor="left"  colo open={drawerOpen} onClose={toggleDrawer(false) } sx={{
+          '& .MuiDrawer-paper': { backgroundColor: 'lightgray' } // Set drawer background color here
+        }}>
       {drawerList}
     </Drawer>
   </>
