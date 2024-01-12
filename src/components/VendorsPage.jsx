@@ -2,30 +2,12 @@ import React, { useState } from 'react';
 import { List, ListItem, ListItemText, Collapse, Link, Table, TableBody, TableCell, TableHead, TableRow, Box , Typography} from '@mui/material';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import vendorsData from '../dataFiles/vendorsData.json';
+import Contacts from '@mui/icons-material/CallTwoTone';
 
 const VendorPage = () => {
   const [open, setOpen] = useState({});
 
-  const vendorsData = [
-    {
-      "name": "Commvault",
-      "details": {
-        "contactPerson": "John Doe",
-        "phoneNumber": "123-456-7890",
-        "supportUrl": "https://www.commvault.com/support",
-        "accountNumber": "CV12345"
-      }
-    },
-    {
-      "name": "Brocade",
-      "details": {
-        "contactPerson": "Jane Smith",
-        "phoneNumber": "987-654-3210",
-        "supportUrl": "https://www.brocade.com/support",
-        "accountNumber": "BR67890"
-      }
-    },
-  ]
 
   const handleClick = (name) => {
     setOpen({ ...open, [name]: !open[name] });
@@ -36,7 +18,8 @@ const VendorPage = () => {
     <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>Vendor Contact List</Typography>
       {vendorsData.map((vendor, index) => (
         <React.Fragment key={index}>
-          <ListItem button onClick={() => handleClick(vendor.name)} sx={{ borderRadius: '10px', mb: 1, boxShadow: 2 }}>
+          <ListItem button onClick={() => handleClick(vendor.name)} sx={{ borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
+            <Contacts/>
             <ListItemText primary={vendor.name} />
             {open[vendor.name] ? <ExpandLess /> : <ExpandMore />}
           </ListItem>

@@ -5,7 +5,6 @@ import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
 import ToolsIcon from '@mui/icons-material/Build'; 
-import GuideIcon from '@mui/icons-material/MenuBook'; 
 
 
 const Navbar = ({ setActiveComponent }) => {
@@ -21,12 +20,14 @@ const Navbar = ({ setActiveComponent }) => {
     setActiveComponent('ssmTools');
   };
 
-  const handleHowToGuidesClick = () => {
-    console.log("How to Guides Clicked");
-    // Add logic for handling click here
+  const handleStorageInfoClick = () => {
+    setActiveComponent('storageInfo')
   };
 
-  // Add similar handlers for other buttons if needed
+  const handleAzureInfoClick = () => {
+    setActiveComponent('azureInfo')
+  };
+
 
   return (
     <AppBar position="static">
@@ -37,13 +38,12 @@ const Navbar = ({ setActiveComponent }) => {
             CloudBuildRepeat
           </Typography>
         </Box>
-        <Button color="inherit" startIcon={<ComputerIcon />} onClick={handleVMwareClick}>VMware</Button>
-        <Button color="inherit" startIcon={<ContactPhoneIcon />} onClick={handleVendorClick}>Vendor Contact</Button>
-        {/* Add other buttons with similar functionality */}
-        <Button color="inherit" startIcon={<ToolsIcon />} onClick={handleSSMToolsClick}>SSM Tools</Button>
-        <Button color="inherit" startIcon={<GuideIcon />} onClick={handleHowToGuidesClick}>How to Guides</Button>
-        <Button color="inherit" startIcon={<StorageIcon />}>Storage</Button>
-        <Button color="inherit" startIcon={<CloudIcon />}>Azure</Button>
+        <Button color="inherit" startIcon={<ComputerIcon fontSize="small"/>} onClick={handleVMwareClick}>VMware</Button>
+        <Button color="inherit" startIcon={<ContactPhoneIcon fontSize="large"/>} onClick={handleVendorClick}>Vendor Contact</Button>
+        
+        <Button color="inherit" startIcon={<ToolsIcon fontSize="large"/>} onClick={handleSSMToolsClick}>SSM Tools</Button>
+        <Button color="inherit" startIcon={<StorageIcon fontSize="large"/>} onClick={handleStorageInfoClick}>Storage Info</Button>
+        <Button color="inherit" startIcon={<CloudIcon fontSize="large"/>} onClick={handleAzureInfoClick}>Azure Info</Button>
       </Toolbar>
     </AppBar>
   );

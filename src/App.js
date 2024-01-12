@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import NestedList from './components/NestedList';
 import VendorPage from './components/VendorsPage';
 import SSMTools from './components/SSMTools';
+import StorageInfo from './components/StorageInfo';
+import AzureInfo from './components/AzureInfo';
 import { Box } from '@mui/material';
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
       {activeComponent === 'nestedList' && <NestedList />}
       {activeComponent === 'vendorPage' && <VendorPage />}
       {activeComponent === 'ssmTools' && <SSMTools />}
+      {activeComponent === 'storageInfo' && <StorageInfo />}
+      {activeComponent === 'azureInfo' && <AzureInfo/>}
       {/* Add other components controlled by the Navbar here */}
     </Box>
   );

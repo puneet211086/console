@@ -1,0 +1,20 @@
+[
+    {
+      "name": "Commvault",
+      "details": {
+        "contactPerson": "John Doe",
+        "phoneNumber": "123-456-7890",
+        "supportUrl": "https://www.commvault.com/support",
+        "accountNumber": "CV12345"
+      }
+    },
+    {
+      "name": "Brocade",
+      "details": {
+        "contactPerson": "Jane Smith",
+        "phoneNumber": "987-654-3210",
+        "supportUrl": "https://www.brocade.com/support",
+        "accountNumber": "BR67890"
+      }
+    }
+  ]

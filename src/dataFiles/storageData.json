@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Storage1",
+      "details": {
+        "ip": "192.168.1.10",
+        "purpose": "File Storage",
+        "url": "http://storage1.example.com",
+        "location": "Datacenter A"
+      }
+    },
+    {
+        "name": "Storage2",
+        "details": {
+          "ip": "192.168.1.10",
+          "purpose": "File Storage",
+          "url": "http://storage1.example.com",
+          "location": "Datacenter A"
+        }
+      }
+    
+  ]

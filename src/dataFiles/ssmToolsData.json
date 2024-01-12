@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Service Now",
+      "description": "Service management platform for IT services.",
+      "servers": [
+        { "name": "Server1", "url": "http://server1.example.com" },
+        { "name": "Server2", "url": "http://server2.example.com" }
+      ],
+      "ipAddresses": [
+        { "address": "192.168.1.1", "url": "http://192.168.1.1" },
+        { "address": "192.168.1.2", "url": "http://192.168.1.2" }
+      ]
+    },
+    {
+        "name": "Whatsapp gold",
+        "description": "Service management platform for IT services.",
+        "servers": [
+          { "name": "Server1", "url": "http://server1.example.com" },
+          { "name": "Server2","url": "http://server2.example.com" }
+        ],
+        "ipAddresses": [
+          { "address": "192.168.1.1", "url": "http://192.168.1.1" },
+          { "address": "192.168.1.2", "url": "http://192.168.1.2" }
+        ]
+      }
+  ]

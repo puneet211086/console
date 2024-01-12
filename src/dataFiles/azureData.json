@@ -1,0 +1,20 @@
+[
+    {
+      "projectName": "Azure Project 1",
+      "details": {
+        "purpose": "Hosting web applications",
+        "url": "http://azureproject1.example.com",
+        "location": "East US"
+      }
+    },
+    {
+        "projectName": "Azure Project 2",
+        "details": {
+          "purpose": "Hosting web applications",
+          "url": "http://azureproject1.example.com",
+          "location": "East US"
+        }
+      }
+    
+  ]
+  

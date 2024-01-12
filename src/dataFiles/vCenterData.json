@@ -1,0 +1,73 @@
+[
+  {
+    "name": "vcenter1",
+    "url": "http://vcenter1.example.com",
+    "datacenters": [
+      {
+        "name": "datacenter1",
+        "clusters": [
+          {
+            "name": "cluster1",
+            "hosts": [
+              { "name": "host1", "ilo": "ilo1", "url": "http://host1.example.com", "iloUrl": "http://ilo1.example.com" },
+              { "name": "host2", "ilo": "ilo2", "url": "http://host2.example.com", "iloUrl": "http://ilo2.example.com" }
+            ]
+          }
+          
+        ]
+      }
+      
+    ]
+  },
+  {
+    "name": "vcenter2",
+    "url": "http://vcenter1.example.com",
+    "datacenters": [
+      {
+        "name": "datacenter1",
+        "clusters": [
+          {
+            "name": "cluster1",
+            "hosts": [
+              { "name": "host1", "ilo": "ilo1", "url": "http://host1.example.com", "iloUrl": "http://ilo1.example.com" },
+              { "name": "host2", "ilo": "ilo2", "url": "http://host2.example.com", "iloUrl": "http://ilo2.example.com" }
+            ]
+          }
+          
+        ]
+      }
+      
+    ]
+  },
+  {
+    "name": "vcenter3",
+    "url": "http://vcenter1.example.com",
+    "datacenters": [
+      {
+        "name": "datacenter1",
+        "clusters": [
+          {
+            "name": "cluster1",
+            "hosts": [
+              { "name": "host1", "ilo": "ilo1", "url": "http://host1.example.com", "iloUrl": "http://ilo1.example.com" },
+              { "name": "host2", "ilo": "ilo2", "url": "http://host2.example.com", "iloUrl": "http://ilo2.example.com" }
+            ]
+          },
+          {
+            "name": "cluster1",
+            "hosts": [
+              { "name": "host1", "ilo": "ilo1", "url": "http://host1.example.com", "iloUrl": "http://ilo1.example.com" },
+              { "name": "host2", "ilo": "ilo2", "url": "http://host2.example.com", "iloUrl": "http://ilo2.example.com" }
+            ]
+          }
+          
+          
+        ]
+      }
+      
+    ]
+  }
+  
+  
+  
+]
