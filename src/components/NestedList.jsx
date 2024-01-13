@@ -71,7 +71,7 @@ const NestedList = () => {
     <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>VMware vCenter Server List</Typography>
       {jsonData.map((vcenter, vIdx) => (
         <React.Fragment key={vIdx}>
-          <ListItem button onClick={() => toggleVcenter(vIdx)} sx={{ borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}  >
+          <ListItem button onClick={() => toggleVcenter(vIdx)} sx={{ background:'#d3d3d3',borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}  >
             <VcenterIcon sx={{ mr: 1 }}  />
             <ListItemText primary={<Link href={vcenter.url} target="_blank" rel="noopener">{vcenter.name}</Link>} />
             {openStates[vIdx].vcenter ? <ExpandLess /> : <ExpandMore />}

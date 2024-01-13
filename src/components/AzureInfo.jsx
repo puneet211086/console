@@ -17,7 +17,7 @@ const AzureInfo = () => {
     <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>Azure Info</Typography>
       {azureData.map((project, index) => (
         <React.Fragment key={index}>
-          <ListItem button onClick={() => handleClick(project.projectName)} sx={{ borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
+          <ListItem button onClick={() => handleClick(project.projectName)} sx={{ background:'#d3d3d3',borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
             <CloudCircleTwoToneIcon/>
             <ListItemText primary={project.projectName} />
             {open[project.projectName] ? <ExpandLess /> : <ExpandMore />}

@@ -17,7 +17,7 @@ const StorageInfo = () => {
     <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>Storage Info</Typography>
       {storageData.map((storage, index) => (
         <React.Fragment key={index}>
-          <ListItem button onClick={() => handleClick(storage.name)} sx={{ borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
+          <ListItem button onClick={() => handleClick(storage.name)} sx={{ background:'#d3d3d3',borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
           <StorageTwoToneIcon/>
             <ListItemText primary={storage.name} />
             {open[storage.name] ? <ExpandLess /> : <ExpandMore />}

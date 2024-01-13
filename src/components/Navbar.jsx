@@ -6,6 +6,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
 import ToolsIcon from '@mui/icons-material/Build'; 
 import MenuIcon from '@mui/icons-material/Menu';
+import LocalFireDepartmentTwoToneIcon from '@mui/icons-material/LocalFireDepartmentTwoTone';
 
 
 const Navbar = ({ setActiveComponent }) => {
@@ -60,9 +61,10 @@ return (
     <AppBar position="static">
       <Toolbar>
       <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-          <img src="https://www.freepnglogos.com/uploads/company-logo-png/company-logo-telestream-press-kit-12.png" alt="Company Logo" style={{ height: '50px', marginRight: '10px' }} />
+          {/* <img src="https://www.freepnglogos.com/uploads/company-logo-png/company-logo-telestream-press-kit-12.png" alt="Company Logo" style={{ height: '50px', marginRight: '10px' }} /> */}
+          <LocalFireDepartmentTwoToneIcon fontSize='large' />
           <Typography variant="h6">
-            CloudBuildRepeat
+
           </Typography>
         </Box>
         {isMobile && (

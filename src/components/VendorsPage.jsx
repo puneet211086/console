@@ -18,7 +18,7 @@ const VendorPage = () => {
     <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>Vendor Contact List</Typography>
       {vendorsData.map((vendor, index) => (
         <React.Fragment key={index}>
-          <ListItem button onClick={() => handleClick(vendor.name)} sx={{ borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
+          <ListItem button onClick={() => handleClick(vendor.name)} sx={{ background:'#d3d3d3',borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
             <Contacts/>
             <ListItemText primary={vendor.name} />
             {open[vendor.name] ? <ExpandLess /> : <ExpandMore />}

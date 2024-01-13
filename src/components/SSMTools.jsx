@@ -18,7 +18,7 @@ const SSMTools = () => {
     <Typography variant="h5" sx={{ textAlign: 'left', mt: 2 ,mb:4}}>SSM Tools List</Typography>
       {ssmToolsData.map((tool, index) => (
         <React.Fragment key={index}>
-          <ListItem button onClick={() => handleClick(tool.name)} sx={{ borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
+          <ListItem button onClick={() => handleClick(tool.name)} sx={{ background:'#d3d3d3',borderRadius:'10px',mb:1 ,borderTop: 1, borderColor: 'divider', boxShadow:2}}>
             <Tools/>
             <ListItemText primary={tool.name} />
             {open[tool.name] ? <ExpandLess /> : <ExpandMore />}
