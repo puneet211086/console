@@ -75,11 +75,11 @@ return (
        
         {!isMobile && (
           <>
-            <Button color="inherit" startIcon={<ComputerIcon fontSize="small"/>} onClick={() => handleButtonClick('nestedList')} >VMware</Button>
-            <Button color="inherit" startIcon={<ContactPhoneIcon fontSize="large"/>} onClick={() => handleButtonClick('vendorPage')}>Vendor Contact</Button>
-            <Button color="inherit" startIcon={<ToolsIcon fontSize="large"/>} onClick={() => handleButtonClick('ssmTools')}>SSM Tools</Button>
-            <Button color="inherit" startIcon={<StorageIcon fontSize="large"/>} onClick={() => handleButtonClick('storageInfo')}>Storage Info</Button>
-            <Button color="inherit" startIcon={<CloudIcon fontSize="large"/>} onClick={() => handleButtonClick('azureInfo')}>Azure Info</Button>
+            <Button sx={{mr:2}} variant='contained' color='info' startIcon={<ComputerIcon fontSize="small"/>} onClick={() => handleButtonClick('nestedList')} >VMware</Button>
+            <Button sx={{mr:2}} variant='contained' color='info' startIcon={<ContactPhoneIcon fontSize="large"/>} onClick={() => handleButtonClick('vendorPage')}>Vendor Contact</Button>
+            <Button sx={{mr:2}} variant='contained' color='info' startIcon={<ToolsIcon fontSize="large"/>} onClick={() => handleButtonClick('ssmTools')}>SSM Tools</Button>
+            <Button sx={{mr:2}} variant='contained' color='info' startIcon={<StorageIcon fontSize="large"/>} onClick={() => handleButtonClick('storageInfo')}>Storage Info</Button>
+            <Button sx={{mr:2}} variant='contained' color='info' startIcon={<CloudIcon fontSize="large"/>} onClick={() => handleButtonClick('azureInfo')}>Azure Info</Button>
           </>
         )}
       </Toolbar>
