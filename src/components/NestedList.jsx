@@ -120,7 +120,7 @@ const NestedList = () => {
             button
             onClick={() => toggleVcenter(vIdx)}
             sx={{
-              background: "#EDF3F3",
+              background: "#d3d3d3",
               borderRadius: "10px",
               mb: 1,
               borderTop: 1,
